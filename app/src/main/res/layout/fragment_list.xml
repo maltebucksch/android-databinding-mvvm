@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
 
         <variable
             name="view"
-            type="com.maltebucksch.androiddatabindingmvvm.ListFragment" />
+            type="com.maltebucksch.androiddatabindingmvvm.list.ListFragment" />
 
         <variable
             name="viewModel"
-            type="com.maltebucksch.androiddatabindingmvvm.ListViewModel" />
+            type="com.maltebucksch.androiddatabindingmvvm.list.ListViewModel" />
     </data>
 
     <LinearLayout
@@ -19,6 +20,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{viewModel.title}"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/soonEndingProductsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividersEnabled="@{true}"
+            app:itemLayoutId="@{@layout/item}"
+            app:listItems="@{viewModel.items}"
+            app:linearLayout="@{true}"
+            app:onItemClick="@{item -> view.onItemClicked() }" />
+
     </LinearLayout>
 
 </layout>

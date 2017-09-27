@@ -1,9 +1,9 @@
-package com.maltebucksch.androiddatabindingmvvm
+package com.maltebucksch.androiddatabindingmvvm.list
 
-import android.arch.lifecycle.ViewModelProvider
+import android.widget.Toast
+import com.maltebucksch.androiddatabindingmvvm.R
 import com.maltebucksch.androiddatabindingmvvm.base.DataBindingFragment
 import com.maltebucksch.androiddatabindingmvvm.databinding.FragmentListBinding
-import kotlin.reflect.KClass
 
 /**
  * Created by wanur on 27/09/2017.
@@ -17,5 +17,9 @@ public class ListFragment: DataBindingFragment<ListViewModel, FragmentListBindin
         fun newInstance(): ListFragment {
             return ListFragment()
         }
+    }
+
+    fun onItemClicked(){
+        Toast.makeText(activity,"Clicked",Toast.LENGTH_SHORT).show()
     }
 }
