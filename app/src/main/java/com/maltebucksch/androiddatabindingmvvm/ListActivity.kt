@@ -8,5 +8,9 @@ class ListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
+
+        if(supportFragmentManager.findFragmentById(R.id.contentFrame) == null){
+            supportFragmentManager.beginTransaction().add(R.id.contentFrame, ListFragment.newInstance()).commit()
+        }
     }
 }
