@@ -1,2 +1,4 @@
-# android-databinding-mvvm
-My approach of implementing MVVM for Android using Data Binding and RxJava
+# Android Data Binding + RxJava
+My approach of implementing MVVM for Android using Kotlin and Data Binding combined with RxJava
+
+
