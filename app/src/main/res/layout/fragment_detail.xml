@@ -3,15 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
 
-        <import type="com.maltebucksch.androiddatabindingmvvm.list.ItemViewModel" />
-
         <variable
             name="view"
-            type="com.maltebucksch.androiddatabindingmvvm.list.ListFragment" />
+            type="com.maltebucksch.androiddatabindingmvvm.detail.DetailFragment" />
 
         <variable
             name="viewModel"
-            type="com.maltebucksch.androiddatabindingmvvm.list.ListViewModel" />
+            type="com.maltebucksch.androiddatabindingmvvm.detail.DetailViewModel" />
     </data>
 
     <LinearLayout
@@ -25,16 +23,11 @@
             android:textStyle="bold"
             android:text="@{viewModel.title}"/>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/soonEndingProductsRecyclerView"
+        <EditText
+            android:layout_margin="@dimen/activity_margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:dividersEnabled="@{true}"
-            app:itemLayoutId="@{@layout/item}"
-            app:listItems="@{viewModel.items}"
-            app:linearLayout="@{true}"
-            app:onItemClick="@{item -> view.onItemClicked((ItemViewModel)item) }" />
-
+            android:text="@={viewModel.notes}"/>
     </LinearLayout>
 
 </layout>
