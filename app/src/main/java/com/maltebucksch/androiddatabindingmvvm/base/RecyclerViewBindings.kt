@@ -15,7 +15,7 @@ import android.util.Log
 @BindingAdapter(value = *arrayOf("listItems", "itemLayoutId", "onItemClick"), requireAll = false)
 fun <T> setItems(recyclerView: RecyclerView, items: ObservableList<T>, @LayoutRes layoutId: Int?, onItemClickListener: BaseAdapter.OnItemClickListener<T>?) {
     if (layoutId != null) {
-        recyclerView.adapter = SingleLayoutItemAdapter<T>(layoutId)
+        recyclerView.adapter = ItemAdapter<T>(layoutId)
     }
     recyclerView.setHasFixedSize(true)
     setItemsToRecyclerView(recyclerView, items)

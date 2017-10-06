@@ -1,10 +1,12 @@
 package com.maltebucksch.androiddatabindingmvvm.base
 
+import android.support.annotation.LayoutRes
+
 /**
  * Created by Malte on 27/04/2017.
  */
 
-abstract class ItemAdapter<T> : BaseAdapter<T> {
+class ItemAdapter<T>(@LayoutRes private val layoutId: Int) : BaseAdapter<T>() {
     var items: List<T>? = null
         get
         set(value) {
@@ -12,10 +14,8 @@ abstract class ItemAdapter<T> : BaseAdapter<T> {
             notifyDataSetChanged()
         }
 
-    constructor() {}
-
-    constructor(items: List<T>) {
-        this.items = items
+    override fun getLayoutIdForPosition(position: Int): Int {
+        return layoutId
     }
 
     override fun getObjForPosition(position: Int): T {
